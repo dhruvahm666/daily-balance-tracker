@@ -68,9 +68,9 @@ Unlike basic habit trackers, Routine Reader analyzes how you actually spend your
 ## 📸 Screenshots
 
 <!-- Add your screenshots here -->
-![Dashboard](#)
-![Activity Log](#)
-![Weekly View](#)
+![](#)
+![](#)
+![](#)
 
 ---
 
@@ -90,7 +90,7 @@ cd routine-reader
 open index.html
 ```
 
-Or simply visit the **[Live Demo](#)** 🔗
+Or simply visit the **[https://routine-reader.lovable.app](#)** 🔗
 
 ---
 
