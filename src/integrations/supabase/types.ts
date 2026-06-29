@@ -14,7 +14,236 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      check_in_messages: {
+        Row: {
+          created_at: string
+          id: string
+          parts: Json
+          role: string
+          thread_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          parts?: Json
+          role: string
+          thread_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          parts?: Json
+          role?: string
+          thread_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "check_in_messages_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "check_in_threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      check_in_threads: {
+        Row: {
+          created_at: string
+          entry_date: string
+          id: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          entry_date?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          entry_date?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      daily_entries: {
+        Row: {
+          breakfast: string | null
+          calories: number | null
+          cardio_minutes: number | null
+          created_at: string
+          data: Json
+          dinner: string | null
+          energy: number | null
+          entry_date: string
+          health_score: number | null
+          id: string
+          lunch: string | null
+          mood: number | null
+          notes: string | null
+          productivity: number | null
+          screen_time_minutes: number | null
+          sleep_hours: number | null
+          sleep_time: string | null
+          snacks: string | null
+          steps: number | null
+          study_work_hours: number | null
+          updated_at: string
+          user_id: string
+          wake_time: string | null
+          water_liters: number | null
+          weight_kg: number | null
+          workout_minutes: number | null
+          workout_type: string | null
+        }
+        Insert: {
+          breakfast?: string | null
+          calories?: number | null
+          cardio_minutes?: number | null
+          created_at?: string
+          data?: Json
+          dinner?: string | null
+          energy?: number | null
+          entry_date?: string
+          health_score?: number | null
+          id?: string
+          lunch?: string | null
+          mood?: number | null
+          notes?: string | null
+          productivity?: number | null
+          screen_time_minutes?: number | null
+          sleep_hours?: number | null
+          sleep_time?: string | null
+          snacks?: string | null
+          steps?: number | null
+          study_work_hours?: number | null
+          updated_at?: string
+          user_id: string
+          wake_time?: string | null
+          water_liters?: number | null
+          weight_kg?: number | null
+          workout_minutes?: number | null
+          workout_type?: string | null
+        }
+        Update: {
+          breakfast?: string | null
+          calories?: number | null
+          cardio_minutes?: number | null
+          created_at?: string
+          data?: Json
+          dinner?: string | null
+          energy?: number | null
+          entry_date?: string
+          health_score?: number | null
+          id?: string
+          lunch?: string | null
+          mood?: number | null
+          notes?: string | null
+          productivity?: number | null
+          screen_time_minutes?: number | null
+          sleep_hours?: number | null
+          sleep_time?: string | null
+          snacks?: string | null
+          steps?: number | null
+          study_work_hours?: number | null
+          updated_at?: string
+          user_id?: string
+          wake_time?: string | null
+          water_liters?: number | null
+          weight_kg?: number | null
+          workout_minutes?: number | null
+          workout_type?: string | null
+        }
+        Relationships: []
+      }
+      insights: {
+        Row: {
+          created_at: string
+          id: string
+          motivation: string | null
+          period_end: string
+          period_start: string
+          scope: string
+          score: number | null
+          strengths: string | null
+          suggestions: string | null
+          summary: string
+          user_id: string
+          weaknesses: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          motivation?: string | null
+          period_end: string
+          period_start: string
+          scope: string
+          score?: number | null
+          strengths?: string | null
+          suggestions?: string | null
+          summary: string
+          user_id: string
+          weaknesses?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          motivation?: string | null
+          period_end?: string
+          period_start?: string
+          scope?: string
+          score?: number | null
+          strengths?: string | null
+          suggestions?: string | null
+          summary?: string
+          user_id?: string
+          weaknesses?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+          theme: string
+          units: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id: string
+          theme?: string
+          units?: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          theme?: string
+          units?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
