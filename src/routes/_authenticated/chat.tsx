@@ -43,9 +43,9 @@ function ChatPage() {
   }, []);
 
   const initialMessages =
-    historyQ.data?.map((m: DbMessage) => ({
+    historyQ.data?.map((m: any) => ({
       id: m.id,
-      role: m.role,
+      role: m.role as "user" | "assistant" | "system",
       parts: (m.parts ?? []) as any,
     })) ?? [];
 

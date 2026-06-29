@@ -110,7 +110,7 @@ export const Route = createFileRoute("/api/chat")({
         const result = streamText({
           model: chatModel(),
           system: SYSTEM_PROMPT,
-          messages: convertToModelMessages(body.messages),
+          messages: await convertToModelMessages(body.messages),
           onFinish: async ({ text }) => {
             await supabase.from("check_in_messages").insert({
               thread_id: body.threadId,
