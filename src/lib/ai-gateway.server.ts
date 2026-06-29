@@ -3,16 +3,16 @@ import { generateObject, generateText } from "ai";
 import { z } from "zod";
 
 function getProvider() {
-  const apiKey = process.env.LOVABLE_API_KEY;
-  if (!apiKey) throw new Error("LOVABLE_API_KEY missing");
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) throw new Error("GROQ_API_KEY missing");
   return createOpenAICompatible({
-    name: "lovable",
-    baseURL: "https://ai.gateway.lovable.dev/v1",
+    name: "groq",
+    baseURL: "https://api.groq.com/openai/v1",
     apiKey,
   });
 }
 
-export const DEFAULT_MODEL = "google/gemini-3-flash-preview";
+export const DEFAULT_MODEL = "llama-3.3-70b-versatile";
 
 export function chatModel() {
   return getProvider().chatModel(DEFAULT_MODEL);
