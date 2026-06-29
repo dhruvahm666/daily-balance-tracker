@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createClient } from "@supabase/supabase-js";
-import { streamText, convertToCoreMessages, type UIMessage } from "ai";
+import { streamText, convertToModelMessages, type UIMessage } from "ai";
 import { chatModel, extractMetrics } from "@/lib/ai-gateway.server";
 import type { Database } from "@/integrations/supabase/types";
 
