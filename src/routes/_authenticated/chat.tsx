@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp, Sparkles, Loader2 } from "lucide-react";
 import { PageShell } from "@/components/health/page-shell";
@@ -84,13 +85,15 @@ function ChatInner({
   onClose: () => void;
 }) {
   const { messages, sendMessage, status } = useChat({
-    transport: undefined as any,
-    api: "/api/chat",
-    headers: { Authorization: `Bearer ${token}` },
-    body: { threadId },
-    initialMessages,
+    id: threadId,
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+      headers: { Authorization: `Bearer ${token}` },
+      body: { threadId },
+    }),
+    messages: initialMessages as any,
     onFinish: onAfterMessage,
-  } as any);
+  });
 
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
