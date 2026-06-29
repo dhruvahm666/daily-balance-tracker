@@ -1,7 +1,7 @@
 <h1 align="center">📅 Routine Reader — Daily Activity Tracker</h1>
 
 <p align="center">
- A smart daily activity tracker that reviews your routine and gives AI-powered suggestions to help you live more balanced.
+ 'A smart daily activity tracker that reviews your routine and gives AI-powered suggestions to help you live more balanced'.
 </p>
 
 <p align="center">
